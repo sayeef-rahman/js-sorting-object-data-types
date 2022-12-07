@@ -1,3 +1,7 @@
+//problem - sort object key value pair according to given order
+// order - object values with string, number & boolean will come first after that array & object will come
+
+//given object
 const testObj = {
   id: 5,
   title: "SASS Tutorial in English - Overview of SASS",
@@ -8,8 +12,12 @@ const testObj = {
     title: "Tutorial in English",
   },
 };
+
+//high & low priority array
 const highPriority = [];
 const lowPriority = [];
+
+//conditions to check
 var result = Object.keys(testObj).map((key) => {
   if (typeof testObj[key] === "string") {
     highPriority.push({
@@ -33,5 +41,7 @@ var result = Object.keys(testObj).map((key) => {
     });
   }
 });
+
+//merging both array in one single array
 const finalResult = [...highPriority, ...lowPriority];
 console.log(finalResult);
